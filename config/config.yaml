@@ -5,4 +5,4 @@ service:
   channels:
     channel_1:
       url: example
-      name: Example
+      path: Example
