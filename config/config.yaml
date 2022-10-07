@@ -1,0 +1,8 @@
+service:
+  url: https://example.com/
+  path: output
+  interval: 5m
+  channels:
+    channel_1:
+      url: example
+      name: Example
