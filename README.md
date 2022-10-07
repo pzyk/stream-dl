@@ -4,11 +4,17 @@ YT-DLP wrapper made for automated live stream downloading
 ## Installation
 
 ### Linux
-1. git clone https://github.com/pzyk/stream-dl.git
-2. cd stream-dl
-3. pip install -r requirements.txt
-4. vim config/config.yaml
-5. python3 stream-dl.py
+```
+git clone https://github.com/pzyk/stream-dl.git
+
+cd stream-dl
+
+pip install -r requirements.txt
+
+vim config/config.yaml
+
+python3 stream-dl.py
+```
 
 ### Docker
 #### Docker Run
@@ -22,7 +28,7 @@ version: "3"
 services:
   stream-dl:
     image: pzyk/stream-dl
-    name: stream-dl
+    container_name: stream-dl
     volumes:
       - /docker/stream-dl/config:/app/config
       - /docker/stream-dl/output:/app/output
