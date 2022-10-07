@@ -22,7 +22,9 @@ def parse_interval(interval: str):
     """
     if interval.endswith("h"):
         return int(interval.replace("h", "")) * 3600
-    elif interval.endswith("m"):
+    if interval.endswith("m"):
         return int(interval.replace("m", "")) * 60
-    elif interval.endswith("s"):
+    if interval.endswith("s"):
         return int(interval.replace("s", ""))
+
+    return 0

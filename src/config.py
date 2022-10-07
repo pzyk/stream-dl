@@ -18,7 +18,8 @@ class Config:
     @staticmethod
     def _read_config(config_path: str):
         """
-        Reads channels YAML file and returns a dict of services containing a config and a dict of channels
+        Reads channels YAML file
+        Returns a dict of services and a dict of channels
         """
         # Open YAML file
         with open(config_path) as file:

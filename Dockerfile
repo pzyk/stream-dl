@@ -15,4 +15,4 @@ RUN apt-get update && \
 
 USER abc
 
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["python", "stream-dl.py"]

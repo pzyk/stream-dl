@@ -6,7 +6,7 @@ import time
 
 import yt_dlp
 
-from utils import parse_interval
+from src.utils import parse_interval
 
 
 class Downloader:
@@ -44,13 +44,13 @@ class Downloader:
                                 1,
                             )
                             continue
-                        else:
-                            # Join thread if it exists but is stopped
-                            self.logger.log(
-                                f"{service_name}: [i] Stopped thread found", 0
-                            )
-                            self.logger.log(f"{service_name}: [>] Killing thread", 0)
-                            thread.join()
+
+                        # Join thread if it exists but is stopped
+                        self.logger.log(
+                            f"{service_name}: [i] Stopped thread found", 0
+                        )
+                        self.logger.log(f"{service_name}: [>] Killing thread", 0)
+                        thread.join()
 
                 # Thread for channel does not exist
                 self.logger.log(

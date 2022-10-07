@@ -11,6 +11,8 @@ from src.utils import motd
 
 logger = Logger(log_level=0)
 
+# pylint: disable=invalid-name
+
 
 def main():
     """
@@ -22,13 +24,13 @@ def main():
     config = Config("config/config.yaml")
     dl = Downloader(logger=logger)
 
-    for service in config.services:
-        logger.log("[>] Spawning service thread for " + service, 1)
+    for service in config.services.items():
+        logger.log("[>] Spawning service thread for " + service[0], 1)
         thread = threading.Thread(
             target=dl.loop,
-            args=(service, config.services[service]["config"], config.services[service]["channels"]),
+            args=(service[0], service[1]["config"], service[1]["channels"]),
         )
-        service_threads[service] = thread
+        service_threads[service[0]] = thread
         thread.start()
 
 
