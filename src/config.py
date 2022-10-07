@@ -22,7 +22,7 @@ class Config:
         Returns a dict of services and a dict of channels
         """
         # Open YAML file
-        with open(config_path) as file:
+        with open(config_path, encoding="utf-8") as file:
             content = yaml.safe_load(file)
 
         # Parse data from YAML file
