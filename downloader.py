@@ -74,7 +74,7 @@ class Downloader:
         Checks if channel is live
         Downloads stream
         """
-        ytdl_options = {"paths": {"home": path}, "quiet": True}
+        ytdl_options = {"paths": {"home": path}}
 
         with yt_dlp.YoutubeDL(ytdl_options) as ytdl:
             try:
