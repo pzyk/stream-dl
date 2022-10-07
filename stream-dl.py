@@ -4,10 +4,10 @@ Live stream downloader
 """
 import threading
 
-from config import Config
-from downloader import Downloader
-from logger import Logger
-from utils import motd
+from src.config import Config
+from src.downloader import Downloader
+from src.logger import Logger
+from src.utils import motd
 
 logger = Logger(log_level=0)
 

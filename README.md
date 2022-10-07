@@ -8,7 +8,7 @@ YT-DLP wrapper made for automated live stream downloading
 2. cd stream-dl
 3. pip install -r requirements.txt
 4. vim config/config.yaml
-5. python3 main.py
+5. python3 stream-dl.py
 
 ### Docker
 #### Docker Run
