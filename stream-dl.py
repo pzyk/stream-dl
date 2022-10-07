@@ -11,8 +11,6 @@ from src.utils import motd
 
 logger = Logger(log_level=0)
 
-# pylint: disable=invalid-name
-
 
 def main():
     """
