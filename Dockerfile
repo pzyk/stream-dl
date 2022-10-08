@@ -11,7 +11,10 @@ RUN apt-get update && \
     pip install --no-cache-dir -r requirements.txt && \
     useradd -s /bin/bash -u 99 abc && \
     usermod -g 100 abc && \
-    rm config/config.yaml
+    rm config/config.yaml && \
+    rm README.md && \
+    rm Dockerfile && \
+    rm requirements.txt
 
 USER abc
 
