@@ -22,7 +22,7 @@ jobs:
         #docker-slim build --target stream-dl:$(echo $TAG) --tag stream-dl:slim-$(echo $TAG) --continue-after=1 --include-shell=true --http-probe=false --include-path=/usr/local/lib/python3.9
     - name: Push the Docker image
       run: docker login -u pzyk -p ${{ secrets.docker_hub }} &&
-        docker tag stream-dl:$(echo $TAG) pzyk/stream-dl:latest
+        docker tag stream-dl:$(echo $TAG) pzyk/stream-dl:latest &&
         docker push pzyk/stream-dl:latest
         #docker tag stream-dl:slim-$(echo $TAG) pzyk/stream-dl:$(echo $TAG) &&
         #docker push pzyk/stream-dl:$(echo $TAG) &&
