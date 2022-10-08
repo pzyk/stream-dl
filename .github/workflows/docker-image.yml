@@ -20,7 +20,7 @@ jobs:
       run: export TAG=$(date +%s) &&
         docker build . --file Dockerfile --tag stream-dl:$(echo $TAG) &&
         docker-slim build --target stream-dl:$(echo $TAG) --tag stream-dl:slim-$(echo $TAG) --http-probe=false &&
-        docker login -u pzyk -p dckr_pat_zLuA5zH_807BD8SKNn86G5IZk0I &&
+        docker login -u pzyk -p ${{ secrets.docker_hub }} &&
         docker tag stream-dl:slim-$(echo $TAG) pzyk/stream-dl:$(echo $TAG) &&
         docker push pzyk/stream-dl:$(echo $TAG) &&
         docker tag stream-dl:$(echo $TAG) pzyk/stream-dl:latest &&
