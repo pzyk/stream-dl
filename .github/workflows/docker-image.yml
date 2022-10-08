@@ -19,7 +19,7 @@ jobs:
     - name: Build the Docker image
       run: export TAG=$(date +%s) &&
         docker build . --file Dockerfile --tag stream-dl:$(echo $TAG) &&
-        docker-slim build --target stream-dl:$(echo $TAG) --tag stream-dl:slim-$(echo $TAG) --continue-after --include-shell &&
+        docker-slim build --target stream-dl:$(echo $TAG) --tag stream-dl:slim-$(echo $TAG) --continue-after --include-shell --http-probe=false &&
         docker login -u pzyk -p ${{ secrets.docker_hub }} &&
         docker tag stream-dl:slim-$(echo $TAG) pzyk/stream-dl:$(echo $TAG) &&
         docker push pzyk/stream-dl:$(echo $TAG) &&
