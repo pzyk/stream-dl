@@ -19,4 +19,4 @@ jobs:
     - name: Build the Docker image
       run: export TAG=$(date +%Y%m%d%H%M) &&
         docker build . --file Dockerfile --tag stream-dl:dev-$(echo $TAG) &&
-        docker-slim build --target stream-dl:dev-$(echo $TAG) --tag stream-dl:dev-slim-$(echo $TAG) --continue-after=10 --include-shell=true --http-probe=false --include-path=/usr/local/lib/python3.9 --exec="ffmpeg -h" &&
+        docker-slim build --target stream-dl:dev-$(echo $TAG) --tag stream-dl:dev-slim-$(echo $TAG) --continue-after=10 --include-shell=true --http-probe=false --include-path=/usr/local/lib/python3.9 --exec="ffmpeg -h"
