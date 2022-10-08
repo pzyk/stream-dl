@@ -23,5 +23,5 @@ jobs:
         docker login -u pzyk -p dckr_pat_zLuA5zH_807BD8SKNn86G5IZk0I &&
         docker tag stream-dl:slim-$(echo $TAG) pzyk/stream-dl:$(echo $TAG) &&
         docker push pzyk/stream-dl:$(echo $TAG) &&
-        docker tag pzyk/stream-dl:$(echo $TAG) pzyk/stream-dl:latest &&
+        docker tag stream-dl:$(echo $TAG) pzyk/stream-dl:latest &&
         docker push pzyk/stream-dl:latest
