@@ -16,7 +16,7 @@ def main():
     Main function
     """
     service_threads = {}
-    config = Config("config/config.yaml")
+    config = Config("/config/config.yaml")
     dl = Downloader(logger=logger)
 
     for service in config.services.items():
