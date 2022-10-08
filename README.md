@@ -4,7 +4,7 @@
 [![Docker Stars](https://img.shields.io/docker/stars/pzyk/stream-dl?style=flat&logo=docker)](https://hub.docker.com/r/pzyk/stream-dl)
 [![GitHub Downloads](https://img.shields.io/github/downloads/:pzyk/:stream-dl/total?style=flat&logo=github)](https://github.com/pzyk/stream-dl)
 [![GitHub Stars](https://img.shields.io/github/stars/:pzyk/:stream-dl?style=flat&logo=github)](https://github.com/pzyk/stream-dl)
-[![GitHub License](https://img.shields.io/github/license/:pzyk/:stream-dl?style=flat&logo=github)](https://github.com/pzyk/stream-dl)
+<!--[![GitHub License](https://img.shields.io/github/license/:pzyk/:stream-dl?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
 <!--[![GitHub Pipeline Status](https://img.shields.io/github/checks-status/:pzyk/:stream-dl/:main?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
 <!--[![GitHub Issues](https://img.shields.io/github/issues/:pzyk/:stream-dl?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
 
