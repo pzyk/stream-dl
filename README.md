@@ -13,13 +13,13 @@ pip install -r requirements.txt
 
 vim config/config.yaml
 
-python3 stream-dl.py
+python3 stream-dl.py -c config/config.yaml
 ```
 
 ### Docker
 #### Docker Run
 ```
-docker run -v /docker/stream-dl/config:/app/config -v /docker/stream-dl/output:/app/output pzyk/stream-dl:latest
+docker run -v /docker/stream-dl/config:/config -v /docker/stream-dl/output:/output pzyk/stream-dl:latest
 ```
 #### Docker Compose
 ```yaml
@@ -30,8 +30,8 @@ services:
     image: pzyk/stream-dl
     container_name: stream-dl
     volumes:
-      - /docker/stream-dl/config:/app/config
-      - /docker/stream-dl/output:/app/output
+      - /docker/stream-dl/config:/config
+      - /docker/stream-dl/output:/output
     restart: unless-stopped
 ```
 

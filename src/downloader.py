@@ -6,7 +6,7 @@ import time
 
 import yt_dlp
 
-from src.utils import parse_interval
+from src.utils import parse_interval, str_to_bool
 
 
 class Downloader:
@@ -14,11 +14,12 @@ class Downloader:
     Class for downloader
     """
 
-    def __init__(self, logger):
+    def __init__(self, logger, dl_args: str):
         """
         Init
         """
         self.logger = logger
+        self.dl_args = dl_args
 
     def loop(self, service_name: str, config: dict, channels: dict):
         """
@@ -46,9 +47,7 @@ class Downloader:
                             continue
 
                         # Join thread if it exists but is stopped
-                        self.logger.log(
-                            f"{service_name}: [i] Stopped thread found", 0
-                        )
+                        self.logger.log(f"{service_name}: [i] Stopped thread found", 0)
                         self.logger.log(f"{service_name}: [>] Killing thread", 0)
                         thread.join()
 
@@ -68,13 +67,25 @@ class Downloader:
             interval = parse_interval(config["interval"])
             time.sleep(interval)
 
-    @staticmethod
-    def _download_channel(url: str, path: str):
+    def _download_channel(self, url: str, path: str):
         """
         Checks if channel is live
         Downloads stream
         """
         ytdl_options = {"paths": {"home": path}}
+
+        # Parse command line options
+        for arg in self.dl_args.split(","):
+            if arg:
+                if "=" in arg:
+                    value = (
+                        arg.split("=")[1]
+                        if arg.split("=")[1].lower() not in ("true", "false")
+                        else str_to_bool(arg.split("=")[1])
+                    )
+                    ytdl_options[arg.split("=")[0]] = value
+                else:
+                    ytdl_options[arg] = True
 
         with yt_dlp.YoutubeDL(ytdl_options) as ytdl:
             try:
