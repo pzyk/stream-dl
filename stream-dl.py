@@ -16,7 +16,7 @@ def get_options(args):
     Parse command line arguments
     """
     if args is None:
-        return
+        return None
 
     parser = argparse.ArgumentParser(description="Parses command.")
     parser.add_argument("-c", "--config", help="Path to config file")

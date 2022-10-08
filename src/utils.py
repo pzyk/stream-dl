@@ -26,4 +26,4 @@ def str_to_bool(value: str):
     if value.strip().lower() == "true":
         return True
 
-    return
+    return None
