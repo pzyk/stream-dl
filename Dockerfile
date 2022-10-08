@@ -3,7 +3,7 @@ FROM python:3.9
 ENV UID=99 \
     GID=100 \
     LOG_LEVEL=1 \
-    YTDL_PARAMS="quiet,verbose"
+    YTDL_ARGS="quiet,verbose"
 
 WORKDIR /app
 
@@ -24,4 +24,4 @@ USER abc
 
 VOLUME /config /downloads
 
-ENTRYPOINT ["python", "stream-dl.py"]
+ENTRYPOINT ["python", "stream-dl.py -l $LOG_LEVEL -a $YTDL_ARGS"]
