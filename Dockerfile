@@ -11,6 +11,8 @@ RUN apt-get update && \
     pip install --no-cache-dir -r requirements.txt && \
     useradd -s /bin/bash -u 99 abc && \
     usermod -g 100 abc && \
+    rm -r .git && \
+    rm -r .github && \
     rm config/config.yaml && \
     rm README.md && \
     rm Dockerfile && \
