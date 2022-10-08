@@ -61,12 +61,12 @@ services:
 | `YTDL_ARGS` | `"quiet,verbose,username=user,password=pass"` | Arguments to pass to yt-dlp    |
 
 #### Image Tags
-| Tag              | Description                                    |
-|:-----------------|:-----------------------------------------------|
-| latest           | Latest stable version                          |
-| 202210082143     | Specific stable version (format: YYYYmmddHHMM) |
-| dev              | Latest development version                     |
-| dev-202210082143 | Specific stable version (format: YYYYmmddHHMM) |
+| Tag                | Description                                    |
+|:-------------------|:-----------------------------------------------|
+| `latest`           | Latest stable version                          |
+| `202210082143`     | Specific stable version (format: YYYYmmddHHMM) |
+| `dev`              | Latest development version                     |
+| `dev-202210082143` | Specific stable version (format: YYYYmmddHHMM) |
 
 ## Configuration
 ```yaml
