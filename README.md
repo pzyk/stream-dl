@@ -57,9 +57,9 @@ services:
 | Tag              | Description                                    |
 |:-----------------|:-----------------------------------------------|
 | latest           | Latest stable version                          |
-| 202210082143     | Specific stable version (format: YYYYMMDDHHmm) |
+| 202210082143     | Specific stable version (format: YYYYmmddHHMM) |
 | dev              | Latest development version                     |
-| dev-202210082143 | Specific stable version (format: YYYYMMDDHHmm) |
+| dev-202210082143 | Specific stable version (format: YYYYmmddHHMM) |
 
 ## Configuration
 ```yaml
