@@ -1,5 +1,5 @@
 # Stream-DL
-YT-DLP wrapper made for automated live stream downloading
+A yt-dlp wrapper for automated downloading of live streams
 
 ## Installation
 
@@ -34,8 +34,6 @@ services:
       - /docker/stream-dl/output:/app/output
     restart: unless-stopped
 ```
-#### Unraid
-You can find Stream-DL in the Unraid apps tab.
 
 ## Configuration
 ```yaml
