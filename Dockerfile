@@ -16,9 +16,10 @@ RUN apt-get update && \
     apt-get autoremove && \
     pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt && \
-    useradd -s /bin/bash -u 99 abc && \
-    usermod -g 100 abc && \
-    rm requirements.txt
+    useradd -s /bin/bash -u $UID abc && \
+    usermod -g $GID abc && \
+    rm requirements.txt && \
+    mv config /
 
 USER abc
 
