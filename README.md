@@ -1,5 +1,6 @@
 # Stream-DL
-A yt-dlp wrapper for automated downloading of live streams
+#### A yt-dlp wrapper for automated downloading of live streams
+Docker Hub: https://hub.docker.com/r/pzyk/stream-dl
 
 ## Installation
 
