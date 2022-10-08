@@ -53,12 +53,12 @@ services:
 ```
 
 #### Environment Variables
-| Variable    | Example Value                                 | Description                                                  |
-|:------------|:----------------------------------------------|:-------------------------------------------------------------|
-| `UID`       | `99`                                          | ID of stream-dl user (should match your host user ID)        |
-| `GID`       | `100`                                         | Group ID of stream-dl user (should match your host group ID) |
-| `LOG_LEVEL` | `1`                                           | 0 = Debug, 1 = Info, 2 = Quiet                               |
-| `YTDL_ARGS` | `"quiet,verbose,username=user,password=pass"` | Arguments to pass to yt-dlp                                  |
+| Variable    | Example Value                                 | Description                    |
+|:------------|:----------------------------------------------|:-------------------------------|
+| `UID`       | `99`                                          | User ID for file permissions   |
+| `GID`       | `100`                                         | Group ID for file permissions  |
+| `LOG_LEVEL` | `1`                                           | 0 = Debug, 1 = Info, 2 = Quiet |
+| `YTDL_ARGS` | `"quiet,verbose,username=user,password=pass"` | Arguments to pass to yt-dlp    |
 
 #### Image Tags
 | Tag              | Description                                    |
