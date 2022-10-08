@@ -2,7 +2,6 @@
 """
 Live stream downloader
 """
-import encodings.idna
 import threading
 
 from src.config import Config
