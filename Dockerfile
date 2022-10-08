@@ -2,7 +2,7 @@ FROM python:3.9
 
 WORKDIR /app
 
-COPY . .
+COPY --chown=99:100 . .
 
 RUN apt-get update && \
     apt-get -y upgrade && \
@@ -11,9 +11,7 @@ RUN apt-get update && \
     pip install --no-cache-dir -r requirements.txt && \
     useradd -s /bin/bash -u 99 abc && \
     usermod -g 100 abc && \
-    rm requirements.txt && \
-    mkdir config && \
-    chown -R 99:100 .
+    rm requirements.txt
 
 USER abc
 
