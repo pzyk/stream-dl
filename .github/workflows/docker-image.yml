@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
-      run: apt-get -y install docker-slim
+      run: sudo apt-get -y install docker-slim
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag stream-dl:$(date +%s) && docker-slim build --target stream-dl:$(date +%s) --tag stream-dl:slim$(date +%s) --http-probe=false
