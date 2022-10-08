@@ -3,19 +3,6 @@ Utilities
 """
 
 
-def motd():
-    """
-    Print some neat ASCII art
-    """
-    message = (
-        "##############################\n"
-        "# Live Stream Downloader 0.1 #\n"
-        "#          by pzyk           #\n"
-        "##############################"
-    )
-    print(message)
-
-
 def parse_interval(interval: str):
     """
     Parses interval string and returns integer
