@@ -17,4 +17,4 @@ jobs:
     - name: Install dependencies
       run: curl -sL https://raw.githubusercontent.com/docker-slim/docker-slim/master/scripts/install-dockerslim.sh | sudo -E bash -
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag stream-dl:$(date +%s) && docker-slim build --target stream-dl:$(date +%s) --tag stream-dl:slim$(date +%s) --http-probe=false
+      run: export TAG=$(date +%s) && docker build . --file Dockerfile --tag stream-dl:$(echo $TAG) && docker-slim build --target stream-dl:$(echo $TAG) --tag stream-dl:slim$(echo $TAG) --http-probe=false
