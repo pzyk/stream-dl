@@ -1,4 +1,5 @@
 # Stream-DL
+
 #### A yt-dlp wrapper for automated downloading of live streams
 Docker Hub: https://hub.docker.com/r/pzyk/stream-dl
 
@@ -18,10 +19,12 @@ python3 stream-dl.py -c config/config.yaml
 ```
 
 ### Docker
+
 #### Docker Run
 ```
 docker run -v /docker/stream-dl/config:/config -v /docker/stream-dl/output:/output pzyk/stream-dl:latest
 ```
+
 #### Docker Compose
 ```yaml
 version: "3"
@@ -29,7 +32,7 @@ version: "3"
 services:
 
   stream-dl:
-    image: pzyk/stream-dl
+    image: pzyk/stream-dl:latest
     container_name: stream-dl
     environment:
       - UID=99                    # Optional
@@ -41,6 +44,7 @@ services:
       - /docker/stream-dl/output:/output
     restart: unless-stopped
 ```
+
 #### Environment Variables
 | Variable    | Example Value                                 | Description                                                  |
 |:------------|:----------------------------------------------|:-------------------------------------------------------------|
@@ -48,6 +52,14 @@ services:
 | `GID`       | `100`                                         | Group ID of stream-dl user (should match your host group ID) |
 | `LOG_LEVEL` | `1`                                           | 0 = Debug, 1 = Info, 2 = Quiet                               |
 | `YTDL_ARGS` | `"quiet,verbose,username=user,password=pass"` | Arguments to pass to yt-dlp                                  |
+
+#### Image Tags
+| Tag              | Description                                    |
+|:-----------------|:-----------------------------------------------|
+| latest           | Latest stable version                          |
+| 202210082143     | Specific stable version (format: YYYYMMDDHHmm) |
+| dev              | Latest development version                     |
+| dev-202210082143 | Specific stable version (format: YYYYMMDDHHmm) |
 
 ## Configuration
 ```yaml
