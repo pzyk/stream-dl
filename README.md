@@ -7,8 +7,7 @@
 <!--[![GitHub License](https://img.shields.io/github/license/:pzyk/:stream-dl?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
 <!--[![GitHub Pipeline Status](https://img.shields.io/github/checks-status/:pzyk/:stream-dl/:main?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
 <!--[![GitHub Issues](https://img.shields.io/github/issues/:pzyk/:stream-dl?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
-
-#### A yt-dlp wrapper for automated downloading of live streams
+A yt-dlp wrapper for automated downloading of live streams
 
 ## Installation
 
