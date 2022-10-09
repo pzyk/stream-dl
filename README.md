@@ -71,7 +71,7 @@ services:
 ```yaml
 example_service:
   url: https://example.com/
-  path: output
+  path: /downloads
   interval: 5m
   channels:
     channel_1:
@@ -82,7 +82,7 @@ example_service:
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `example_service` | Name of the streaming service (choose whatever you like)                                                                                                     |
 | `url`             | URL of the streaming service                                                                                                                                 |
-| `path`            | Default output path for downloaded videos                                                                                                                    |
+| `path`            | Default output path for downloaded videos (use /downloads when running in Docker)                                                                            |
 | `interval`        | Interval to check if streams are online (e.g. 10s, 5m, 1h)                                                                                                   |
 | `channels`        | Fixed block name (do not change!)                                                                                                                            |
 | `channel_1`       | Name of a channel to download (choose whatever you like)                                                                                                     |
