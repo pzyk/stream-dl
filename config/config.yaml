@@ -1,6 +1,6 @@
 service:
   url: https://example.com/
-  path: output
+  path: /downloads
   interval: 5m
   channels:
     channel_1:

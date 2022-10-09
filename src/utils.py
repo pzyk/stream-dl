@@ -15,3 +15,15 @@ def parse_interval(interval: str):
         return int(interval.replace("s", ""))
 
     return 0
+
+
+def str_to_bool(value: str):
+    """
+    Converts string to bool
+    """
+    if value.strip().lower() == "false":
+        return False
+    if value.strip().lower() == "true":
+        return True
+
+    return None
