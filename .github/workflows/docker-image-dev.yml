@@ -23,5 +23,5 @@ jobs:
         docker login -u pzyk -p ${{ secrets.docker_hub }} &&
         docker tag stream-dl:dev-slim-$(echo $TAG) pzyk/stream-dl:dev-$(echo $TAG) &&
         docker push pzyk/stream-dl:dev-$(echo $TAG) &&
-        docker tag pzyk/stream-dl:dev-$(echo $TAG) pzyk/stream-dl:dev-latest &&
-        docker push pzyk/stream-dl:dev-latest
+        docker tag pzyk/stream-dl:dev-$(echo $TAG) pzyk/stream-dl:dev &&
+        docker push pzyk/stream-dl:dev
