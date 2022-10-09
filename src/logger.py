@@ -17,7 +17,7 @@ class Logger:
             1: Info
             2: Quiet
         """
-        self.log_level = log_level
+        self.log_level = int(log_level)
 
     def log(self, message: str, log_level: int):
         """
