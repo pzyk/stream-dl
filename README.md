@@ -17,7 +17,7 @@ git clone https://github.com/pzyk/stream-dl.git
 
 cd stream-dl
 
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 vim config/config.yaml
 
