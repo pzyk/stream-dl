@@ -25,4 +25,4 @@ USER abc
 
 VOLUME /config /downloads
 
-ENTRYPOINT ["python", "stream-dl.py -l $LOG_LEVEL -a $YTDL_ARGS"]
+ENTRYPOINT python stream-dl.py -l $LOG_LEVEL -a $YTDL_ARGS
