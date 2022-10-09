@@ -40,7 +40,7 @@ def main():
     config_path = options.config if options.config else "/config/config.yaml"
     config = Config(config_path)
 
-    log_level = options.log_level if options.log_level else 0
+    log_level = options.log_level if options.log_level else 1
     logger = Logger(log_level=log_level)
 
     dl_args = options.ytdl_args if options.ytdl_args else ""
@@ -49,10 +49,10 @@ def main():
     dl = Downloader(logger=logger, dl_args=dl_args)
 
     for service in config.services.items():
-        logger.log("[>] Spawning service thread for " + service[0], 1)
+        logger.log("[>] Spawning service thread for " + service[0], 0)
         thread = threading.Thread(
             target=dl.loop,
-            args=(service[0], service[1]["config"], service[1]["channels"]),
+            args=(service[1]["config"], service[1]["channels"]),
         )
         service_threads[service[0]] = thread
         thread.start()

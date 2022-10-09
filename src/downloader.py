@@ -21,7 +21,7 @@ class Downloader:
         self.logger = logger
         self.dl_args = dl_args
 
-    def loop(self, service_name: str, config: dict, channels: dict):
+    def loop(self, config: dict, channels: dict):
         """
         Loop which is started for each service
         Cycles through all channels and spawns threads to download them
@@ -40,30 +40,24 @@ class Downloader:
                     if thread:
                         if thread.is_alive():
                             self.logger.log(
-                                f"{service_name}: [i] Thread already running for "
-                                + channel,
+                                "[i] Download already running: " + url,
                                 1,
                             )
                             continue
 
                         # Join thread if it exists but is stopped
-                        self.logger.log(f"{service_name}: [i] Stopped thread found", 0)
-                        self.logger.log(f"{service_name}: [>] Killing thread", 0)
+                        self.logger.log("[i] Stopped thread found", 0)
                         thread.join()
 
                 # Thread for channel does not exist
-                self.logger.log(
-                    f"{service_name}: [>] Spawning thread for " + channel, 1
-                )
+                self.logger.log("[>] Spawning thread for " + channel, 0)
                 thread = threading.Thread(
                     target=self._download_channel, args=(url, path)
                 )
                 threads[channel] = thread
                 thread.start()
 
-            self.logger.log(
-                f"{service_name}: [>] Sleeping for " + config["interval"], 1
-            )
+            self.logger.log("[>] Sleeping for " + config["interval"], 0)
             interval = parse_interval(config["interval"])
             time.sleep(interval)
 
@@ -72,7 +66,7 @@ class Downloader:
         Checks if channel is live
         Downloads stream
         """
-        ytdl_options = {"paths": {"home": path}}
+        ytdl_options = {"paths": {"home": path}, "print-traffic": True}
 
         # Parse command line options
         for arg in self.dl_args.split(","):
@@ -89,7 +83,9 @@ class Downloader:
 
         with yt_dlp.YoutubeDL(ytdl_options) as ytdl:
             try:
+                self.logger.log("[>] Starting stream download: " + url, 1)
                 ytdl.download([url])
+                self.logger.log("[i] Stream downloaded successfully: " + url, 1)
             except yt_dlp.utils.DownloadError:
                 # Don't crash if stream is offline
-                pass
+                self.logger.log("[!] Stream download failed: " + url, 1)
