@@ -7,8 +7,7 @@
 <!--[![GitHub License](https://img.shields.io/github/license/:pzyk/:stream-dl?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
 <!--[![GitHub Pipeline Status](https://img.shields.io/github/checks-status/:pzyk/:stream-dl/:main?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
 <!--[![GitHub Issues](https://img.shields.io/github/issues/:pzyk/:stream-dl?style=flat&logo=github)](https://github.com/pzyk/stream-dl)-->
-
-#### A yt-dlp wrapper for automated downloading of live streams
+A yt-dlp wrapper for automated downloading of live streams
 
 ## Installation
 
@@ -61,12 +60,12 @@ services:
 | `YTDL_ARGS` | `"quiet,verbose,username=user,password=pass"` | Arguments to pass to yt-dlp    |
 
 #### Image Tags
-| Tag              | Description                                    |
-|:-----------------|:-----------------------------------------------|
-| latest           | Latest stable version                          |
-| 202210082143     | Specific stable version (format: YYYYmmddHHMM) |
-| dev              | Latest development version                     |
-| dev-202210082143 | Specific stable version (format: YYYYmmddHHMM) |
+| Tag                | Description                                    |
+|:-------------------|:-----------------------------------------------|
+| `latest`           | Latest stable version                          |
+| `202210082143`     | Specific stable version (format: YYYYmmddHHMM) |
+| `dev`              | Latest development version                     |
+| `dev-202210082143` | Specific stable version (format: YYYYmmddHHMM) |
 
 ## Configuration
 ```yaml
