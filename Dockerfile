@@ -7,7 +7,7 @@ ENV UID=99 \
 
 WORKDIR /app
 
-COPY --chown=99:100 . .
+COPY --chown=$UID:$GID . .
 
 RUN apt-get update && \
     apt-get -y upgrade && \
@@ -25,4 +25,4 @@ USER abc
 
 VOLUME /config /downloads
 
-ENTRYPOINT python stream-dl.py -l $LOG_LEVEL -a $YTDL_ARGS
+ENTRYPOINT python stream-dl.py -c /config/config.yaml -l $LOG_LEVEL -a $YTDL_ARGS

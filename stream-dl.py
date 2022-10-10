@@ -37,7 +37,7 @@ def main():
     """
     options = get_options(sys.argv[1:])
 
-    config_path = options.config if options.config else "/config/config.yaml"
+    config_path = options.config if options.config else "config/config.yaml"
     config = Config(config_path)
 
     log_level = options.log_level if options.log_level else 1
