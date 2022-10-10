@@ -21,14 +21,14 @@ pip3 install -r requirements.txt
 
 vim config/config.yaml
 
-python3 stream-dl.py -c config/config.yaml
+python3 stream-dl.py
 ```
 
 ### Docker
 
 #### Docker Run
 ```
-docker run -v /docker/stream-dl/config:/config -v /docker/stream-dl/output:/output pzyk/stream-dl:latest
+docker run -v /docker/stream-dl/config:/config -v /docker/stream-dl/downloads:/downloads pzyk/stream-dl:latest
 ```
 
 #### Docker Compose
@@ -47,7 +47,7 @@ services:
       - YTDL_ARGS="quiet,verbose" # Optional
     volumes:
       - /docker/stream-dl/config:/config
-      - /docker/stream-dl/output:/output
+      - /docker/stream-dl/downloads:/downloads
     restart: unless-stopped
 ```
 
@@ -64,8 +64,6 @@ services:
 |:-------------------|:-----------------------------------------------|
 | `latest`           | Latest stable version                          |
 | `202210082143`     | Specific stable version (format: YYYYmmddHHMM) |
-| `dev`              | Latest development version                     |
-| `dev-202210082143` | Specific stable version (format: YYYYmmddHHMM) |
 
 ## Configuration
 ```yaml
