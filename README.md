@@ -64,6 +64,8 @@ services:
 |:-------------------|:-----------------------------------------------|
 | `latest`           | Latest stable version                          |
 | `202210082143`     | Specific stable version (format: YYYYmmddHHMM) |
+| `dev`              | Latest development version                     |
+| `dev-202210082143` | Specific stable version (format: YYYYmmddHHMM) |
 
 ## Configuration
 ```yaml
