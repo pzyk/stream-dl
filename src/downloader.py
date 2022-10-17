@@ -66,7 +66,7 @@ class Downloader:
         Checks if channel is live
         Downloads stream
         """
-        ytdl_options = {"paths": {"home": path}, "print-traffic": True}
+        ytdl_options = {"paths": {"home": path}, "print-traffic": True, "no-part": True}
 
         # Parse command line options
         for arg in self.dl_args.split(","):
