@@ -12,12 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install dependencies
-      run: curl -sL https://raw.githubusercontent.com/docker-slim/docker-slim/master/scripts/install-dockerslim.sh | sudo -E bash -
     - name: Build the Docker image
       run: export TAG=$(date +%Y%m%d%H%M) &&
         docker build . --file Dockerfile --tag stream-dl:dev-$(echo $TAG) &&
-        docker-slim build --target stream-dl:dev-$(echo $TAG) --tag stream-dl:dev-slim-$(echo $TAG) --continue-after=10 --include-shell=true --http-probe=false --include-path=/usr/local/lib/python3.9 --exec="ffmpeg -h && ffprobe -h" &&
         docker login -u pzyk -p ${{ secrets.docker_hub }} &&
         docker tag stream-dl:dev-slim-$(echo $TAG) pzyk/stream-dl:dev-$(echo $TAG) &&
         docker push pzyk/stream-dl:dev-$(echo $TAG) &&
