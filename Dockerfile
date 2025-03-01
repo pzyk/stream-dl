@@ -7,7 +7,9 @@ ENV UID=99 \
 
 WORKDIR /app
 
-COPY --chown=$UID:$GID . .
+COPY --chown=$UID:$GID src .
+COPY --chown=$UID:$GID stream-dl.py .
+COPY requirements.txt .
 
 RUN apt-get update && \
     apt-get -y upgrade && \
@@ -16,8 +18,7 @@ RUN apt-get update && \
     apt-get clean && \
     pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt && \
-    useradd -s /bin/bash -u $UID abc && \
-    usermod -g $GID abc && \
+    useradd -s /bin/bash -u $UID -g $GID abc && \
     rm requirements.txt && \
     rm -rf /var/lib/apt/lists/* && \
     mv config /
